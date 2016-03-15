@@ -1,6 +1,8 @@
 package com.example.aakov.emergencyapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,10 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonUserDetail, buttonEmergencyList, buttonContactList;
 
+    final static String SP_KEY_FIRSTNAME = "firstname";
+    final static String SP_KEY_LASTNAME = "lastname";
+    final static String SP_KEY_MOBILENUMBER = "mobilenumber";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +24,25 @@ public class MainActivity extends AppCompatActivity {
         buttonUserDetail = (Button) findViewById(R.id.button_main_user_detail);
         buttonEmergencyList = (Button) findViewById(R.id.button_main_emergency_list);
         buttonContactList = (Button) findViewById(R.id.button_main_contact_list);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        final String firstname = sp.getString(SP_KEY_FIRSTNAME, null);
+        final String lastname = sp.getString(SP_KEY_LASTNAME, null);
+        final String mobilenumber = sp.getString(SP_KEY_MOBILENUMBER, null);
+
+        if ((firstname != null || lastname != null) && mobilenumber != null){
+            // Put contact details here
+        } else {
+            Intent i = new Intent();
+            i.setClass(getBaseContext(), UserDetailActivity.class);
+            startActivity(i);
+        }
 
         buttonUserDetail.setOnClickListener(new View.OnClickListener() {
             @Override
