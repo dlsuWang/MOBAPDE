@@ -1,0 +1,36 @@
+<resources>
+    <!-- Android Studio Auto-generated Strings -->
+    <string name="app_name">emergencySMS</string>
+
+    <!-- Global Strings -->
+    <string name="contact_details">Contact Details</string>
+    <string name="MOBILE_NUMBER">MOBILE NUMBER</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="mobile_number">Mobile Number</string>
+
+    <!-- Activity Specific Strings -->
+    <!-- Add Emergency -->
+    <string name="add_emergency">Add Emergency</string>
+    <string name="TITLE">TITLE</string>
+    <string name="COMBINATION">COMBINATION</string>
+    <string name="MESSAGE">MESSAGE</string>
+
+    <!-- Emergency List -->
+    <string name="emergency_list">Emergency List</string>
+
+    <!-- Add Contact -->
+    <string name="add_contact">Add Contact</string>
+    <string name="NAME">NAME</string>
+
+    <!-- Contact List -->
+    <string name="contact_list">Contact List</string>
+
+    <!-- User Detail -->
+    <string name="user_detail">User Detail</string>
+    <string name="FIRST_NAME">FIRST NAME</string>
+    <string name="LAST_NAME">LAST NAME</string>
+    <string name="verify_number">Verify Number</string>
+    <string name="CODE">CODE</string>
+
+</resources>

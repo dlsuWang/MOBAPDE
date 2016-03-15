@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aakov.emergencyapp.AddContactActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorLightGray"
+        android:id="@+id/container_add_contact_header">
+
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/button_add_contact_back"
+            android:background="@drawable/bt_back2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_contact"
+            android:textAllCaps="true"
+            android:layout_alignTop="@id/button_add_contact_back"
+            android:layout_toEndOf="@id/button_add_contact_back"
+            android:layout_marginStart="21dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textIsSelectable="false"/>
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bt_save"
+            android:id="@+id/button_add_contact_save"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="15dp">
+
+        <!-- Add contact image -->
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bt_add"
+            android:id="@+id/button_add_contact_image"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/et_add_contact_name"
+            android:layout_alignBottom="@id/button_add_contact_image"
+            android:layout_toEndOf="@id/button_add_contact_image"
+            android:hint="@string/NAME"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="15dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_add_contact_number"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/MOBILE_NUMBER"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_details"
+            android:id="@+id/tv_add_contact_contact_details"
+            android:layout_above="@id/et_add_contact_number"
+            android:layout_alignParentStart="true"
+            android:textSize="20sp"
+            android:textColor="@color/colorBlack"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

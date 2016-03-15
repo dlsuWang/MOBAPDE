@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aakov.emergencyapp.AddEmergencyActivity">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorLightGray"
+        android:id="@+id/container_add_emergency_header">
+
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/button_add_emergency_back"
+            android:background="@drawable/bt_back2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_emergency"
+            android:textAllCaps="true"
+            android:id="@+id/tv_add_emergency_header"
+            android:layout_alignTop="@id/button_add_emergency_back"
+            android:layout_toEndOf="@id/button_add_emergency_back"
+            android:layout_marginStart="21dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textIsSelectable="false"/>
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bt_save"
+            android:id="@+id/button_add_emergency_save"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_below="@id/container_add_emergency_header"
+        >
+
+        <!-- Button add here is redundant. Could it mean add combination? -->
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/button_add_emergency"
+            android:background="@drawable/bt_add"
+            android:layout_alignParentEnd="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_add_emergency_title"
+            android:layout_alignTop="@id/button_add_emergency"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/button_add_emergency"
+            android:hint="@string/TITLE"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_add_emergency_combination"
+            android:layout_below="@id/et_add_emergency_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:hint="@string/COMBINATION"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_add_emergency_message"
+            android:layout_below="@id/et_add_emergency_combination"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:hint="@string/MESSAGE"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

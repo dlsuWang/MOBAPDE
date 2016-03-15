@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android Studio Auto-generated Colors -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- User-defined Colors -->
+    <color name="colorLightGray">#C6C6C6</color>
+    <color name="colorBlack">#000000</color>
+
+
+</resources>
