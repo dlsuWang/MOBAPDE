@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     final static String SP_KEY_FIRSTNAME = "firstname";
     final static String SP_KEY_LASTNAME = "lastname";
     final static String SP_KEY_MOBILENUMBER = "mobilenumber";
+    final static String SP_KEY_ISREGISTERED = "isregistered";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         final String firstname = sp.getString(SP_KEY_FIRSTNAME, null);
         final String lastname = sp.getString(SP_KEY_LASTNAME, null);
         final String mobilenumber = sp.getString(SP_KEY_MOBILENUMBER, null);
+        final boolean isregistered = sp.getBoolean(SP_KEY_ISREGISTERED, false);
 
         if ((firstname != null || lastname != null) && mobilenumber != null){
             // Put contact details here

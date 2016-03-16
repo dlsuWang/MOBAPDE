@@ -31,6 +31,12 @@ public class UserDetailActivity extends AppCompatActivity {
         etLastName.setText(sp.getString(MainActivity.SP_KEY_LASTNAME, null));
         etMobileNumber.setText(sp.getString(MainActivity.SP_KEY_MOBILENUMBER, null));
 
+        if(sp.getBoolean(MainActivity.SP_KEY_ISREGISTERED, false) == false){
+            buttonBack.setVisibility(View.INVISIBLE);
+        } else {
+            buttonBack.setVisibility(View.VISIBLE);
+        }
+
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,15 +52,20 @@ public class UserDetailActivity extends AppCompatActivity {
                 String lastName = etLastName.getText().toString();
                 String mobileNumber = etMobileNumber.getText().toString();
 
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                SharedPreferences.Editor spEditor = sp.edit();
-                spEditor.putString(MainActivity.SP_KEY_FIRSTNAME, firstName);
-                spEditor.putString(MainActivity.SP_KEY_LASTNAME, lastName);
-                spEditor.putString(MainActivity.SP_KEY_MOBILENUMBER, mobileNumber);
-                spEditor.commit();
+                if ((!(firstName.isEmpty()) || !(lastName.isEmpty())) && !(mobileNumber.isEmpty())) {
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                    SharedPreferences.Editor spEditor = sp.edit();
+                    spEditor.putString(MainActivity.SP_KEY_FIRSTNAME, firstName);
+                    spEditor.putString(MainActivity.SP_KEY_LASTNAME, lastName);
+                    spEditor.putString(MainActivity.SP_KEY_MOBILENUMBER, mobileNumber);
+                    spEditor.putBoolean(MainActivity.SP_KEY_ISREGISTERED, true);
+                    spEditor.commit();
 
-                finish();
-                Toast.makeText(getApplication(), "User Detail Saved", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Toast.makeText(getApplication(), "User Detail Saved", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplication(), "Please fill out your name and mobile number", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
